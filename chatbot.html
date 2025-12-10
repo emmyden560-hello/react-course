@@ -151,7 +151,9 @@
               <img src="/images/robotimg.png" className="img" />
             )}
             <div className="message">{message}</div>
-            {sender === "user" && <img src="/images/userimg.png" className="img" />}
+            {sender === "user" && (
+              <img src="/images/userimg.png" className="img" />
+            )}
           </div>
         );
       }
