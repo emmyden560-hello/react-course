@@ -11,8 +11,26 @@
 
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
-      const container = document.querySelector('.js-container');
-      ReactDOM.createRoot(container).render('Welcome to SuperSimpleDev React Course');
+      const container = document.querySelector(".js-container");
+
+      function App() {
+        const [showPassword, setShowPassword] = React.useState(false);
+
+        return (
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="Enter password"
+            />
+
+            <button onClick={() => setShowPassword(!showPassword)}>
+              {showPassword ? "Hide" : "Show"}
+            </button>
+          </div>
+        );
+      }
+
+      ReactDOM.createRoot(container).render(<App />);
     </script>
-  </body> 
+  </body>
 </html>

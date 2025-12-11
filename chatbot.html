@@ -74,6 +74,28 @@
         height: 50px;
         padding-top: 3px;
       }
+
+      .message-container {
+        flex-grow: 1;
+        margin-top: 20px;
+        overflow: scroll;
+        scrollbar-width: none;
+      }
+
+      .loader {
+        width: 20px;
+        height: 20px;
+        border: 3px solid #ccc;
+        border-top-color: #198754;
+        border-radius: 50%;
+        animation: spin 0.7s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
     </style>
   </head>
   <body>
@@ -86,7 +108,7 @@
 
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
-      function ChatInput({ chatMessages, setchatMessages }) {
+      function ChatInput({ chatMessages, setchatMessages, setLoading }) {
         const [inputText, setInputText] = React.useState("");
 
         function saveInput(event) {
@@ -94,6 +116,8 @@
         }
 
         function sendMessage() {
+          if (!inputText.trim()) return;
+
           const newchatMessages = [
             ...chatMessages,
             {
@@ -104,18 +128,24 @@
           ];
 
           setchatMessages(newchatMessages);
-
-          const response = Chatbot.getResponse(inputText);
-          setchatMessages([
-            ...newchatMessages,
-            {
-              message: response,
-              sender: "robot",
-              id: crypto.randomUUID(),
-            },
-          ]);
-
           setInputText("");
+
+          setLoading(true);
+
+          setTimeout(() => {
+            const response = Chatbot.getResponse(inputText);
+
+            setchatMessages([
+              ...newchatMessages,
+              {
+                message: response,
+                sender: "robot",
+                id: crypto.randomUUID(),
+              },
+            ]);
+
+            setLoading(false);
+          }, 2000);
         }
 
         function send(event) {
@@ -158,9 +188,18 @@
         );
       }
 
-      function ChatMessages({ chatMessages }) {
+      function ChatMessages({ chatMessages, loading }) {
+        const chatref = React.useRef(null);
+
+        React.useEffect(() => {
+          const containerElem = chatref.current;
+          if (containerElem) {
+            containerElem.scrollTop = containerElem.scrollHeight;
+          }
+        }, [chatMessages, loading]);
+
         return (
-          <>
+          <div className="message-container" ref={chatref}>
             {chatMessages.map((chatMessage) => {
               return (
                 <ChatMessage
@@ -168,35 +207,25 @@
                   sender={chatMessage.sender}
                   key={chatMessage.id}
                 />
-              );
+            );
             })}
-          </>
+
+            {loading && (
+              <div className="robot-chat">
+                <div className="message">
+                  <div class="loader"></div>
+                </div>
+                <img src="/images/robotimg.png" className="img" />
+              </div>
+            )}
+          </div>
         );
       }
 
       function App() {
-        const [chatMessages, setchatMessages] = React.useState([
-          {
-            message: "hello chatbot",
-            sender: "user",
-            id: "1",
-          },
-          {
-            message: "hello how can i help u",
-            sender: "robot",
-            id: "2",
-          },
-          {
-            message: "can u get me todays date",
-            sender: "user",
-            id: "3",
-          },
-          {
-            message: "taoday is december 9",
-            sender: "robot",
-            id: "4",
-          },
-        ]);
+        const [chatMessages, setchatMessages] = React.useState([]);
+        const [loading, setLoading] = React.useState(false);
+
         // const chatMessages = array[0];  //current data
         // const setchatMessages = array[1]; // update function
         // const [chatMessages, setchatMessages] = array //shortcut with a btr shortcut
@@ -207,6 +236,7 @@
             <ChatInput
               chatMessages={chatMessages}
               setchatMessages={setchatMessages}
+              setLoading={setLoading}
             />
           </div>
         );
