@@ -1,0 +1,28 @@
+      .message-container {
+        flex-grow: 1;
+        margin-top: 20px;
+        overflow: scroll;
+        scrollbar-width: none;
+      }
+
+        .time {
+        font-size: 14px;
+        color: gray;
+        margin-top: 4px; 
+      }
+
+            
+      .loader {
+        width: 20px;
+        height: 20px;
+        border: 3px solid #ccc;
+        border-top-color: #198754;
+        border-radius: 50%;
+        animation: spin 0.7s linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
