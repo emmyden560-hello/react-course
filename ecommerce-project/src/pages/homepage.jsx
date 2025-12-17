@@ -3,6 +3,8 @@ import { products } from '../../start-code/data/products';
 import './homepage.css'
 
 export function HomePage() {
+    fetch('http://localhost:3000/api/products')
+
     return (
         <>
             <title>Ecommerce Project</title>
