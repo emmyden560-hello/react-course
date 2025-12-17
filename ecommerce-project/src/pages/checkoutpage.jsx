@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import './checkout-header.css'
 import './checkoutpage.css'
 
@@ -9,15 +10,15 @@ export function CheckoutPage() {
             <div className="checkout-header">
                 <div className="header-content">
                     <div className="checkout-header-left-section">
-                        <a href="/">
+                        <Link to="/">
                             <img className="logo" src="images/logo.png" />
                             <img className="mobile-logo" src="images/mobile-logo.png" />
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="checkout-header-middle-section">
-                        Checkout (<a className="return-to-home-link"
-                            href="/">3 items</a>)
+                        Checkout (<Link className="return-to-home-link"
+                            to="/">3 items</Link>)
                     </div>
 
                     <div className="checkout-header-right-section">
@@ -182,37 +183,37 @@ export function CheckoutPage() {
                         </div>
                     </div>
 
-                    <div class="payment-summary">
-                        <div class="payment-summary-title">
+                    <div className="payment-summary">
+                        <div className="payment-summary-title">
                             Payment Summary
                         </div>
 
-                        <div class="payment-summary-row">
+                        <div className="payment-summary-row">
                             <div>Items (3):</div>
-                            <div class="payment-summary-money">$42.75</div>
+                            <div className="payment-summary-money">$42.75</div>
                         </div>
 
-                        <div class="payment-summary-row">
+                        <div className="payment-summary-row">
                             <div>Shipping &amp; handling:</div>
-                            <div class="payment-summary-money">$4.99</div>
+                            <div className="payment-summary-money">$4.99</div>
                         </div>
 
-                        <div class="payment-summary-row subtotal-row">
+                        <div className="payment-summary-row subtotal-row">
                             <div>Total before tax:</div>
-                            <div class="payment-summary-money">$47.74</div>
+                            <div className="payment-summary-money">$47.74</div>
                         </div>
 
-                        <div class="payment-summary-row">
+                        <div className="payment-summary-row">
                             <div>Estimated tax (10%):</div>
-                            <div class="payment-summary-money">$4.77</div>
+                            <div className="payment-summary-money">$4.77</div>
                         </div>
 
-                        <div class="payment-summary-row total-row">
+                        <div className="payment-summary-row total-row">
                             <div>Order total:</div>
-                            <div class="payment-summary-money">$52.51</div>
+                            <div className="payment-summary-money">$52.51</div>
                         </div>
 
-                        <button class="place-order-button button-primary">
+                        <button className="place-order-button button-primary">
                             Place your order
                         </button>
                     </div>
