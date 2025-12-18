@@ -1,7 +1,8 @@
 import dayjs from "dayjs";
 import { formatMoney } from "../../utils/money";
+import axios from "axios";
 
-export function OrderSummary({cart, deliveryOptions}) {
+export function OrderSummary({ cart, deliveryOptions }) {
     return (
         <div className="order-summary">
             {deliveryOptions.length > 0 && cart.map((cartItem => {
@@ -44,18 +45,27 @@ export function OrderSummary({cart, deliveryOptions}) {
                                     <div className="delivery-options-title">
                                         Choose a delivery option:
                                     </div>
-                                    {deliveryOptions.map((deliveryOption) => {
+                                    {deliveryOptions.map((deliveryOption, loadCart) => {
                                         let priceString = 'FREE Shipping';
 
                                         if (deliveryOption.priceCents > 0) {
                                             priceString = `${formatMoney(deliveryOption.priceCents)} - Shipping`
                                         }
+
+                                        const updateDoption = async () => {
+                                            await axios.put(`/api/cart-item/${cartItem.productId}`, {
+                                                deliveryOptionId: deliveryOption.id
+                                            })
+                                            await loadCart();
+                                        };
+
                                         return (
                                             <div
                                                 key={deliveryOption.id}
-                                                className="delivery-option">
+                                                className="delivery-option" onClick={updateDoption}>
                                                 <input type="radio"
                                                     checked={deliveryOption.id === cartItem.deliveryOptionId}
+                                                    onChange={() => { }}
                                                     className="delivery-option-input"
                                                     name={`delivery-option-${cartItem.productId}`} />
                                                 <div>
