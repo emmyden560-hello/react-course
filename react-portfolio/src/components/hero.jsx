@@ -9,7 +9,7 @@ export const HeroSection = () => {
                     <h1 className="text-4xl md:text-6xl font-bold tracking-light">
                         <span className="opacity-0 animate-fade-in">Hi, I'm</span>
                         <span className="text-primary opacity-0 animate-fade-in-delay-1"> Emmy</span>
-                        <span className="text-gradient opacity-0 animate-fade-in-delay-2">Den</span>
+                        <span className="text-gradient opacity-0 animate-fade-in-delay-2">Dev</span>
                     </h1>
                     <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
                         I create awesome web experiences with modern technologies. Combining both front-end and back-end development, I build interfaces that are both stunning n functional.
