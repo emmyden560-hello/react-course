@@ -24,7 +24,7 @@ export function ContactSection() {
                     } else {
                         reject(new Error("Failed to send"))
                     }
-                }, 1500)
+                }, 1000)
             }),
             {
                 loading: "Sending your message...",

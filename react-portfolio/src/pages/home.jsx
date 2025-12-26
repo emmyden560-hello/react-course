@@ -1,3 +1,4 @@
+import { Footer } from "@/components/footer"
 import { AboutSection } from "../components/about"
 import { ContactSection } from "../components/contact"
 import { HeroSection } from "../components/hero"
@@ -30,6 +31,7 @@ export const HomePage = () => {
             </main>
 
             {/* footer */}
+            <Footer />
         </div>
     )
 }
