@@ -12,6 +12,8 @@ import { ThemeToggle } from "../components/theme"
 export const HomePage = () => {
     return (
         <div className="min-h-screen bg-background overflow-x-hidden">
+            <title>EmmyDev Portfolio</title>
+
             {/* theme toggle */}
             <ThemeToggle />
 
