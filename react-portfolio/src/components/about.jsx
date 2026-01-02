@@ -25,7 +25,7 @@ export const AboutSection = () => {
                         <div className="flex fles-col sm:flex-row gap-4 pt-4 justify-center">
                             <a href="#contact" className="cosmic-button">Get In Touch</a>
 
-                            <a href="./Emmy_CV.pdf"
+                            <a href="./Your_CV.pdf"
                                 download 
                             className="rock-button">Download CV</a>
                         </div>
