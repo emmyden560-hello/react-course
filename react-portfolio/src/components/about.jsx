@@ -12,20 +12,22 @@ export const AboutSection = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div className="space-y-6">
-                        <h3 className="text-2xl font-semibold">Passionate FullStack Engineer  & Tech Innovator</h3>
+                        <h3 className="text-2xl font-semibold">Passionate Frontend Developer  & UI Enthusiast</h3>
 
                         <p className="text-muted-foreground">
-                            With about a year of experience in web development and backend development, I can create accessible, and performant web apps using mordern tools and technologies.
+                            With about a year of experience in building responsive and user-friendly web applications, I create accessible, performant, and visually engaging interfaces using modern frontend tools and technologies.
                         </p>
 
                         <p className="text-muted-foreground">
-                            With about a year of experience in web development and backend development, I can create accessible, and performant web apps using mordern tools and technologies.
+                            I enjoy translating design concepts into interactive web experiences, optimizing applications for speed and scalability, and constantly learning new frameworks and techniques to deliver polished, high-quality projects.
                         </p>
 
                         <div className="flex fles-col sm:flex-row gap-4 pt-4 justify-center">
                             <a href="#contact" className="cosmic-button">Get In Touch</a>
 
-                            <a href="" className="rock-button">Download CV</a>
+                            <a href="./Emmy_CV.pdf"
+                                download 
+                            className="rock-button">Download CV</a>
                         </div>
                     </div>
 
@@ -49,9 +51,9 @@ export const AboutSection = () => {
                                     <User className="h-6 w-6 text-primary" />
                                 </div>
                                 <div className="text-left">
-                                    <h4 className="font-semibold text-lg">Web Development</h4>
+                                    <h4 className="font-semibold text-lg">User Experience</h4>
                                     <p className="text-muted-foreground">
-                                        Ceating responsive website and web apps with high functionality and modern framewoks.
+                                        Designing intuitive and engaging interfaces that prioritize accessibility, usability, and seamless interactions for all users.
                                     </p>
                                 </div>
                             </div>
@@ -62,9 +64,9 @@ export const AboutSection = () => {
                                     <Briefcase className="h-6 w-6 text-primary" />
                                 </div>
                                 <div className="text-left">
-                                    <h4 className="font-semibold text-lg">Web Development</h4>
+                                    <h4 className="font-semibold text-lg">Collaboration</h4>
                                     <p className="text-muted-foreground">
-                                        Ceating responsive website and web apps with high functionality and modern framewoks.
+                                        Working effectively with designers, developers, and stakeholders to deliver projects on time while maintaining high-quality standards.
                                     </p>
                                 </div>
                             </div>

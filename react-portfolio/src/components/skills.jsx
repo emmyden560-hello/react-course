@@ -5,28 +5,26 @@ import { cn } from "../lib/utils";
 
 const skills = [
     //Frontend
-    { name: 'HTML/CSS', level: 85, category: "frontend" },
-    { name: 'HTML/CSS', level: 85, category: "frontend" },
-    { name: 'HTML/CSS', level: 85, category: "frontend" },
-    { name: 'HTML/CSS', level: 85, category: "frontend" },
-    { name: 'HTML/CSS', level: 85, category: "frontend" },
+    { name: 'HTML', level: 95, category: "frontend" },
+    { name: 'CSS', level: 85, category: "frontend" },
+    { name: 'JavaScript', level: 80, category: "frontend" },
+    { name: 'TypeScript', level: 70, category: "frontend" },
 
-    //Backend
-    { name: 'Python', level: 55, category: "backend" },
-    { name: 'Python', level: 55, category: "backend" },
-    { name: 'Python', level: 55, category: "backend" },
-    { name: 'Python', level: 55, category: "backend" },
-    { name: 'Python', level: 55, category: "backend" },
+    //Framework
+    { name: 'React', level: 75, category: "framework" },
+    { name: 'Next.js', level: 60, category: "framework" },
+    { name: 'Tailwind CSS', level: 70, category: "framework" },
+    { name: 'Framer Motion', level: 70, category: "framework" },
 
     //Tools
-    { name: 'Git/GIthub', level: 75, category: "tools" },
-    { name: 'Git/GIthub', level: 75, category: "tools" },
-    { name: 'Git/GIthub', level: 75, category: "tools" },
-    { name: 'Git/GIthub', level: 75, category: "tools" },
-    { name: 'Git/GIthub', level: 75, category: "tools" },
+    { name: 'VS Code', level: 80, category: "tools" },
+    { name: 'Git/Github', level: 70, category: "tools" },
+    { name: 'Vite/Turbopack', level: 70, category: "tools" },
+    { name: 'ESLint', level: 65, category: "tools" },
+    { name: 'Prettier', level: 80, category: "tools" },
 ]
 
-const categories = ["all", "frontend", "backend", "tools"]
+const categories = ["all", "frontend", "framework", "tools"]
 
 
 export function SKillsSection() {
